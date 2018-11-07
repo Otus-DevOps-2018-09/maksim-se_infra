@@ -1,0 +1,7 @@
+{
+    "project_id": "mango-tilda-33222233",
+    "source_image_family": "ubuntu-2448-lts",
+    "image_description": "Образ для контерстрайка",
+    "disk_type": "super-disk-128k",
+    "disk_size": "999999"
+}

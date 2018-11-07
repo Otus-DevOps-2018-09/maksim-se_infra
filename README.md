@@ -63,3 +63,27 @@ testapp_port = 9292
 Создание этого правила через cmd:
 
     gcloud compute firewall-rules create default-puma-server --action allow  --rules tcp:9292 --source-ranges 0.0.0.0/0
+
+
+
+============================================================================
+
+ДЗ №5
+
+Написаны конфиг- и файл-переменных для создания образа reddit-base-1540324101 с предъустановленными пакетами mongodb и ruby. запускается командой:
+        
+    packer build -var-file=variables.json ubuntu16.json
+
+Файл variables.json занесен в .gitignore для секурности.
+
+Потом на основе образа reddit-base-1540324101 был создан образ с задеплоенным приложением.
+Написан файл systemd для запуска приложения при старте системы.
+Конфиг-файл нового образа называется immutable.json
+
+В файле config-scripts/create-reddit-vm.sh прописана комманда для создания машины из последнего образа  reddit-full-1540329152 
+
+gcloud compute instances create reddit-full --zone=europe-west1-b --image "reddit-full-1540329152" --machine-type f1-micro
+
+Так же команды запуска и останова этой машины.
+
+
