@@ -1,0 +1,9 @@
+project = "indigo-winti444er-219415"
+public_key_path = "~/.ssh/appuser.pub"
+app_disk_image = "reddit-base-1541443515"
+db_disk_image = "reddit-base-1541443201"
+private_key_path = "~/.ssh/appuser"
+zone = "europe-west4-a"
+vm_count = "1"
+env = "stage"
+

@@ -1,4 +1,22 @@
 # maksim-se_infra
+	--- Описание дом. задания №7
+   - проект был разбит на модули: app, db, vpc
+   - были созданы 2 среды prod, stage. Среды настроены на одновременную работу.
+   - настроен модуль storage-bucket на хранение файлов terraform (tfstate)
+   - проверил работу блокировок
+
+Error: Error locking state: Error acquiring the state lock: writing "gs://sb-prod/terraform/prod/default.tflock" failed: googleapi: Error 412: Precondition Failed, conditionNotMet
+Lock Info:
+  ID:        1543941633309686
+  Path:      gs://sb-prod/terraform/prod/default.tflock
+  Operation: OperationTypeApply
+  Who:       maksim@yoga-11s
+  Version:   0.11.10
+  Created:   2018-12-04 16:40:33.155098399 +0000 UTC
+  Info:      
+
+
+  -  добавлено создание сервисов с помощью provisioner
 
   --- Описание дом. задания №6
 

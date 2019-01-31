@@ -4,7 +4,11 @@ variable project {
 
 variable region {
   description = "Region"
-  default     = "europe-west1"
+  default     = "us-central1"
+}
+
+variable "env" {
+  description = "project env like prod, stage, dev ..."
 }
 
 variable public_key_path {
@@ -17,7 +21,7 @@ variable private_key_path {
 
 variable zone {
   description = "Zone"
-  default     = "europe-west4-b"
+  default     = "europe-west4-a"
 }
 
 variable vm_count {
