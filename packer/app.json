@@ -1,12 +1,12 @@
 {
     "variables": {
-        "machine_type": "f1-micro"
+        "machine_type": "g1-small"
         },
     "builders": [
         {
             "type": "googlecompute",
             "project_id": "{{ user `project_id` }}",
-            "image_name": "reddit-base-{{timestamp}}",
+            "image_name": "reddit-app-base-{{timestamp}}",
             "image_description": "{{ user `image_description` }}",
             "disk_type": "{{ user `disk_type` }}",
             "disk_size": "{{ user `disk_size` }}",
@@ -19,9 +19,8 @@
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
+        "type": "ansible",
+        "playbook_file": "ansible/packer_app.yml"
         }
     ]
 }
