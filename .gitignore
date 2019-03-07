@@ -9,3 +9,9 @@ jdauphant.nginx
 vault.key
 .vagrant/
 venv/
+*.log
+*.pyc
+.molecule
+.cache
+.pytest_cache
+
