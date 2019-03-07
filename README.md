@@ -50,23 +50,3 @@ Lock Info:
 
 3. перепиисан код с использование параметра count для создания необходимого кол-ва серверов.Count занается в файле  terraform/terraform.tfvars и знание по-умолчанию (1) прописано в terraform/variables.tf
 
-	--- Описание дом. задания №9
-
-	Написаны 3 версии плейбуков для деплоя приложения.
-	1. плейбук ввиде одного файла: ansible/reddit_app_one_play.yml
-	2. плейбук ввиде трёх файлов: ansible/reddit_app_multiple_plays.yml
-	3. плейбук ввиде 3 подзадач: ansible/site.yml
-	Переписаны провиженеры packer с использованием плейбуков: ansible/packer_app.yml и ansible/packer_db.yml. Созданы новые образы для терраформа, развернуты инстансы  и и приложение:
-			packer build -var-file=packer/variables.jsonpacker/db.json
-			packer build -var-file=packer/variables.json packer/app.json
-			ansible-playbook -i ansible/inventory ansible/site.yml
-
-  --- Описание дом. задания №9
-  1. плейбуки разнесены в раздельные роли.
-  2. созданы различные окрежения: prod и stage
-  3. использована роль Nginx: jdauphant.nginx
-  4. настроен ansible vault
-  5. встроен вывод о используемом окружении
-  5. в терраформе открыл 80 порт
-  6. при пересоздании  серверов приходиться править инвентори и файл с переменными
-  7. Настроен travisCI на валидацию packer шаблонов, валидацию terraform и tflint окружений, валидацию ansible-lint плейбуков.
