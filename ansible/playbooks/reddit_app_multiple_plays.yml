@@ -33,7 +33,7 @@
         owner: appuser
         group: appuser
       notify: reload puma
-      
+
     - name: enable puma
       systemd: name=puma enabled=yes
 
@@ -59,6 +59,7 @@
   handlers:
   - name: reload puma
     systemd: name=puma state=restarted
-  
+
   - name: restart mongod
     service: name=mongod state=restarted
+

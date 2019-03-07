@@ -13,12 +13,13 @@
       repo: deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
       state: present
 
-  - name: Install mongodb 
+  - name: Install mongodb
     apt:
       name: mongodb-org
       state: present
 
-  - name: Configure service 
+  - name: Configure service
     systemd:
       name: mongod
       enabled: yes
+
